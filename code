@@ -1,0 +1,15 @@
+a=input('请输入明文：')
+X=input('请输入偏移量:')
+if X:
+    x=int(X)
+else:
+    x=3
+i=0
+b=[]
+while i<len(a):
+    b.append(chr(ord(a[i])+x))
+    i=i+1
+i=0
+while i<len(a):
+    print(b[i],end='')
+    i=i+1
