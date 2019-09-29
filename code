@@ -1,15 +1,33 @@
-a=input('请输入明文：')
-X=input('请输入偏移量:')
-if X:
-    x=int(X)
+a=input('选择输入模式（1.输入文本 2.导入文本 3.退出程序）')
+if a=='1' or a=='2':
+    X=input('请输入偏移量:')
+    if X:
+        x=int(X)
+    else:
+        x=3
 else:
-    x=3
-i=0
-b=[]
-while i<len(a):
-    b.append(chr(ord(a[i])+x))
-    i=i+1
-i=0
-while i<len(a):
-    print(b[i],end='')
-    i=i+1
+    try:
+        sys.exit(0)
+    except:
+        print('程序已退出.')
+if a=='1':
+    c=input('请输入明文：')
+    i=0
+    b=[]
+    while i<len(c):
+        b.append(chr(ord(c[i])+x))
+        i=i+1
+    for d in b:
+        print(d,end='')
+if a=='2':
+    c=input('请输入文件路径：')
+    f= open(c,"r")
+    txt = f.read()
+    f.close()
+    i=0
+    b=[]
+    while i<len(txt):
+        b.append(chr(ord(txt[i])+x))
+        i=i+1
+    for d in b:
+        print(d,end='')
